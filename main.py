@@ -55,22 +55,62 @@
 # person1 = person('Иван', 'Иванов')
 # print(person1)
 
-class person:
-    def __init__(self, firstname, lastname, status, numder):
-        self.firstname = firstname
-        self.lastname = lastname
-        self.status = status
-        self.numder = numder
+# class person:
+#     def __init__(self, firstname, lastname, status, numder):
+#         self.firstname = firstname
+#         self.lastname = lastname
+#         self.status = status
+#         self.numder = numder
+#
+#     def __str__(self):
+#         return f'Меня зовут {self.firstname} {self.lastname}, я учусь на {self.status} и я нахожусь на {self.numder} месте в списке'
+#
+# person1 = person("Иван", "Иванов", "5", "23")
+# person2 = person("Алексей", "Рыбаков", "4", "25")
+# person3 = person("Пётр", "Соколов", "3", "21")
+# person4 = person("Мария", "Воровна", "5", "30")
+#
+# print(person1)
+# print(person2)
+# print(person3)
+# print(person4)
 
-    def __str__(self):
-        return f'Меня зовут {self.firstname} {self.lastname}, я учусь на {self.status} и я нахожусь на {self.numder} месте в списке'
+class transport:
+    def __init__(self, speed, color):
+        self.speed = speed
+        self.color = color
 
-person1 = person("Иван", "Иванов", "5", "23")
-person2 = person("Алексей", "Рыбаков", "4", "25")
-person3 = person("Пётр", "Соколов", "3", "21")
-person4 = person("Мария", "Воровна", "5", "30")
+    def beep(self):
+        print('beep')
 
-print(person1)
-print(person2)
-print(person3)
-print(person4)
+class car(transport):
+    def __init__(self, speed, color, owner):
+        super().__init__(speed, color)
+        self.owner = owner
+
+    def say_owner(self):
+        print(f'Владелец {self.owner}')
+
+class bus(transport):
+    def __init__(self, speed, color, seeds):
+        super().__init__(speed, color)
+        self.seeds = seeds
+
+    def say_seeds(self):
+        print(f'Кол-во мест {self.seeds}')
+
+
+car1 = car(100, 'yellow', 'Василий')
+bus1 = bus(60, 'red', 42)
+print(car1.color)
+print(car1.speed)
+print(car1.owner)
+
+car1.beep()
+car1.say_owner()
+
+
+print(bus1.color)
+print(bus1.speed)
+print(bus1.seeds)
+bus1.say_seeds()
