@@ -75,28 +75,28 @@
 # print(person3)
 # print(person4)
 
-class transport:
-    def __init__(self, speed, color):
-        self.speed = speed
-        self.color = color
-
-    def beep(self):
-        print('beep')
-
-class car(transport):
-    def __init__(self, speed, color, owner):
-        super().__init__(speed, color)
-        self.owner = owner
-
-    def say_owner(self):
-        print(f'Владелец {self.owner}')
-
-class sportcar(car, transport):
-    pass
-
-car11 = sportcar(150, 'white', "Алексей")
-print(car11.speed)
-car11.say_owner()
+# class transport:
+#     def __init__(self, speed, color):
+#         self.speed = speed
+#         self.color = color
+#
+#     def beep(self):
+#         print('beep')
+#
+# class car(transport):
+#     def __init__(self, speed, color, owner):
+#         super().__init__(speed, color)
+#         self.owner = owner
+#
+#     def say_owner(self):
+#         print(f'Владелец {self.owner}')
+#
+# class sportcar(car, transport):
+#     pass
+#
+# car11 = sportcar(150, 'white', "Алексей")
+# print(car11.speed)
+# car11.say_owner()
 
 # class bus(transport):
 #     def __init__(self, speed, color, seeds):
@@ -121,3 +121,28 @@ car11.say_owner()
 # print(bus1.speed)
 # print(bus1.seeds)
 # bus1.say_seeds()
+
+
+class roditel:
+    def __init__(self, eyes, hair, growth):
+        self.eyes = eyes
+        self.hair = hair
+        self.growth = growth
+
+    def say_name(self):
+        print("Я твой папа")
+
+class soon(roditel):
+    def __init__(self, eyes, hair, growth, ears):
+        super().__init__(eyes, hair, growth)
+        self.ears = ears
+
+    def say_name1(self):
+        print('Я сын')
+
+parents1 = roditel("зелёные", "каштановые", 175)
+soon1 = soon("голубые","светлые",160, 'длинные')
+print(parents1.eyes, parents1.hair, parents1.growth)
+print(soon1.eyes, soon1.hair, soon1.growth, soon1.ears)
+parents1.say_name()
+soon1.say_name1()
