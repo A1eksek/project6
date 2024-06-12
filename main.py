@@ -91,26 +91,33 @@ class car(transport):
     def say_owner(self):
         print(f'Владелец {self.owner}')
 
-class bus(transport):
-    def __init__(self, speed, color, seeds):
-        super().__init__(speed, color)
-        self.seeds = seeds
+class sportcar(car, transport):
+    pass
 
-    def say_seeds(self):
-        print(f'Кол-во мест {self.seeds}')
+car11 = sportcar(150, 'white', "Алексей")
+print(car11.speed)
+car11.say_owner()
 
-
-car1 = car(100, 'yellow', 'Василий')
-bus1 = bus(60, 'red', 42)
-print(car1.color)
-print(car1.speed)
-print(car1.owner)
-
-car1.beep()
-car1.say_owner()
+# class bus(transport):
+#     def __init__(self, speed, color, seeds):
+#         super().__init__(speed, color)
+#         self.seeds = seeds
+#
+#     def say_seeds(self):
+#         print(f'Кол-во мест {self.seeds}')
 
 
-print(bus1.color)
-print(bus1.speed)
-print(bus1.seeds)
-bus1.say_seeds()
+# car1 = car(100, 'yellow', 'Василий')
+# bus1 = bus(60, 'red', 42)
+# print(car1.color)
+# print(car1.speed)
+# print(car1.owner)
+#
+# car1.beep()
+# car1.say_owner()
+#
+#
+# print(bus1.color)
+# print(bus1.speed)
+# print(bus1.seeds)
+# bus1.say_seeds()
